@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALDIRAY YILDIRAY ÇAKMAK - Uluslararası Lojistik Direktörü Portfolyosu</title>
+    <style>
+        /* Renkler: Koyu Mavi/Lacivert (Ciddiyet), Turuncu (Vurgu/Lojistik), Beyaz/Gri (Okunabilirlik) */
+        :root {
+            --color-primary: #1A237E; /* Koyu Lacivert */
+            --color-accent: #FF9800; /* Lojistik Turuncusu */
+            --color-light: #F5F5F5; /* Açık Gri */
+            --color-text: #333333;
+            --color-white: #ffffff;
+        }
+
+        /* Genel Sıfırlama ve Font */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s ease;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* Başlık ve Navigasyon */
+        header {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        nav a {
+            color: var(--color-white);
+            text-decoration: none;
+            margin-left: 25px;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Dil Seçici (Language Switcher) */
+        .lang-switcher {
+            margin-left: 30px;
+            padding: 8px 12px;
+            border: 1px solid var(--color-accent);
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.9em;
+            outline: none;
+        }
+
+        .lang-switcher:hover {
+            background-color: #3f51b5;
+        }
+
+        /* Ana Bölüm */
+        .section {
+            padding: 60px 0;
+            background-color: var(--color-white);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: var(--color-primary);
+            border-bottom: 3px solid var(--color-accent);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        /* Profil Bölümü */
+        #profile {
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+            padding: 80px 0;
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        #profile h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        #profile h3 {
+            font-size: 1.5em;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+        
+        /* İletişim Bilgileri */
+        #profile-contact {
+            margin-top: 30px;
+            font-size: 1.1em;
+        }
+        #profile-contact span {
+            margin: 0 15px;
+        }
+
+        /* CV İçerik Stilizasyonu */
+        .experience-item, .education-item {
+            border-left: 4px solid var(--color-accent);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .experience-item h4, .education-item h4 {
+            font-size: 1.4em;
+            color: var(--color-primary);
+            margin-bottom: 5px;
+        }
+
+        .experience-item p.date, .education-item p.date {
+            color: #777;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .experience-item ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        .experience-item li {
+            margin-bottom: 5px;
+        }
+        
+        .sub-experience-title {
+            font-size: 1.8em;
+            color: var(--color-primary);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--color-light);
+            padding-bottom: 5px;
+        }
+
+        /* Yetenekler Bölümü */
+        #skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        #skills ul li {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 10px 15px;
+            margin: 0 10px 10px 0;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+
+        /* Lojistik Perspektifi Bölümü (Tematik İçerik) */
+        .insight-box {
+            background-color: var(--color-light);
+            padding: 20px;
+            border-left: 5px solid var(--color-accent);
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .insight-box h3 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--color-primary);
+            color: var(--color-light);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        /* Dil Gizleme Kuralı */
+        .lang-content {
+            display: none;
+        }
+
+        /* Varsayılan olarak Türkçe göster */
+        .lang-content[data-lang="tr"] {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <span class="logo">LOGISTICS DIRECTOR CV</span>
+            <div style="display: flex; align-items: center;">
+                <nav>
+                    <a href="#profile" data-nav-tr="Profil" data-nav-en="Profile" data-nav-ru="Профиль" data-nav-zh="简介">Profil</a>
+                    <a href="#experience" data-nav-tr="Deneyim" data-nav-en="Experience" data-nav-ru="Опыт" data-nav-zh="经验">Deneyim</a>
+                    <a href="#skills" data-nav-tr="Yetenekler" data-nav-en="Skills" data-nav-ru="Навыки" data-nav-zh="技能">Yetenekler</a>
+                    <a href="#perspective" data-nav-tr="Perspektif" data-nav-en="Perspective" data-nav-ru="Перспектива" data-nav-zh="展望">Perspektif</a>
+                    <a href="#education" data-nav-tr="Eğitim" data-nav-en="Education" data-nav-ru="Образование" data-nav-zh="教育">Eğitim</a>
+                    <a href="#references" data-nav-tr="Referanslar" data-nav-en="References" data-nav-ru="Рекомендации" data-nav-zh="推荐人">Referanslar</a>
+                </nav>
+                <select id="lang-switcher" class="lang-switcher">
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="profile" class="section">
+            <div class="container">
+                <div class="lang-content" data-lang="tr">
+                    <h1>SALDIRAY YILDIRAY ÇAKMAK</h1>
+                    <h3>Lojistik ve Tedarik Zinciri Direktörü</h3>
+                    <p>25 yılı aşkın ilerleyici deneyime, Retail/Tekstil sektöründe 15+ yıl üst düzey liderlik geçmişine sahip, sonuca odaklı, son derece yetkin bir Lojistik ve Tedarik Zinciri Direktörüyüm. Rusya Federasyonu, BDT ve Türkiye genelinde Dış Ticaret Faaliyetleri (DTF), gümrük operasyonları ve çok ülkeli tedarik zinciri yönetiminde derin uzmanlık.</p>
+                </div>
+                <div class="lang-content" data-lang="en">
+                    <h1>SALDIRAY YILDIRAY ÇAKMAK</h1>
+                    <h3>Logistics and Supply Chain Director</h3>
+                    <p>A highly accomplished, results-driven Logistics and Supply Chain Director with over 25 years of progressive experience, including 15+ years in senior leadership roles within the Retail/Textile sector. Deep expertise in Foreign Economic Activity (FEA), customs operations, and multi-country supply chain management across the Russian Federation, CIS countries, and Turkey.</p>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                    <h1>САЛДЫРАЙ ЙЫЛДЫРАЙ ЧАКМАК</h1>
+                    <h3>Директор по логистике и цепи поставок</h3>
+                    <p>Высококвалифицированный, ориентированный на результат Директор по логистике и цепи поставок с более чем 25-летним стажем, включая 15+ лет на руководящих должностях в секторе розничной торговли/текстиля. Глубокая экспертиза во Внешнеэкономической деятельности (ВЭД), таможенных операциях и управлении цепью поставок в Российской Федерации, странах СНГ и Турции.</p>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <h1>萨尔德拉伊·伊尔德拉伊·恰克马克</h1>
+                    <h3>物流与供应链总监</h3>
+                    <p>一位成就卓越、注重结果的物流与供应链总监，拥有超过25年的渐进式经验，其中15年以上在零售/纺织行业的担任高级领导职务。在俄罗斯联邦、独联体国家和土耳其的对外经济活动（FEA）、海关运营和多国供应链管理方面拥有深厚的专业知识。</p>
+                </div>
+                
+                <div id="profile-contact">
+                    <span>Email: sycmoscow@gmail.com</span>
+                    <span>Mobile (RU): +7 919 964 15 80 / +7 926 467 30 24</span>
+                    <span>Mobile (TR): +90 535 724 17 13</span>
+                </div>
+                </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title" data-title-tr="DENEYİM" data-title-en="WORK EXPERIENCE" data-title-ru="ОПЫТ РАБОТЫ" data-title-zh="工作经验">DENEYİM</h2>
+
+                <div class="lang-content" data-lang="tr">
+                    <div class="experience-item">
+                        <h4>1. Lojistik Direktörü | Perakende/Tekstil (Colin's)</h4>
+                        <p>Kasım 2010 - Şubat 2025 (14+ Yıl) | Rusya, BDT, Türkiye (200'den fazla mağaza için tedarik zinciri yönetimi)</p>
+                        <ul>
+                            <li>**Gümrük Optimizasyonu & Yeşil Koridor:** Ortalama işlem süresini **2.87 günden 1.30 güne indirdi**. Stratejik olarak "Yeşil Koridor" statüsüne geçişi yönetti.</li>
+                            <li>**Tedarik Zinciri Verimliliği:** Ulusal dağıtım sürelerini tam **2 gün kısaltan** Cross-Dock sevkiyat yönetim stratejisi uyguladı.</li>
+                            <li>**IT Entegrasyonu:** Gerçek zamanlı ürün takibi ve teslimat sistemlerinin taşıyıcılarla entegrasyonuna öncülük etti, toplam verimlilikte %20 artış sağladı.</li>
+                            <li>**Operasyonel Mükemmellik:** Depo operasyonlarını optimize ederek sipariş karşılama hızında %25 iyileşme elde etti.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="en">
+                    <div class="experience-item">
+                        <h4>1. Logistics Director | Retail/Textile (Colin's)</h4>
+                        <p>November 2010 - February 2025 (14+ Years) | Russia, CIS, Turkey (Management of supply chain for 200+ stores)</p>
+                        <ul>
+                            <li>**Customs Optimization & Green Corridor:** Successfully reduced average processing time from **2.87 days to 1.30 days**. Led the strategic transition to "Green Corridor" status.</li>
+                            <li>**Supply Chain Efficiency:** Implemented a Cross-Dock shipment management strategy, cutting national distribution lead times by **2 full days**.</li>
+                            <li>**IT Integration:** Spearheaded the integration of real-time product tracking systems with carriers, resulting in a 20% increase in overall efficiency.</li>
+                            <li>**Operational Excellence:** Optimized warehouse operations, achieving a 25% improvement in order fulfillment speed.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                    <div class="experience-item">
+                        <h4>1. Директор по логистике | Розничная торговля/Текстиль (Colin's)</h4>
+                        <p>Ноябрь 2010 - Февраль 2025 (14+ лет) | Россия, СНГ, Турция (Управление цепью поставок для 200+ магазинов)</p>
+                        <ul>
+                            <li>**Оптимизация Таможни и «Зеленый коридор»:** Успешно сократил среднее время обработки с **2,87 до 1,30 дня**. Руководил стратегическим переходом к статусу «Зеленый коридор».</li>
+                            <li>**Эффективность Цепи Поставок:** Внедрил стратегию Cross-Dock, сократив сроки национального распределения на **2 полных дня**.</li>
+                            <li>**ИТ-интеграция:** Руководил интеграцией систем отслеживания товаров с перевозчиками, что привело к росту общей эффективности на 20%.</li>
+                            <li>**Операционное Превосходство:** Оптимизировал складские операции, достигнув улучшения скорости выполнения заказов на 25%.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="experience-item">
+                        <h4>1. 物流总监 | 零售/纺织 (Colin's)</h4>
+                        <p>2010年11月 - 2025年2月 (14+年) | 俄罗斯、独联体、土耳其 (管理200多家门店的供应链)</p>
+                        <ul>
+                            <li>**海关优化与“绿色通道”：** 成功将平均处理时间从**2.87天缩短至1.30天**。领导战略性过渡至“绿色通道”地位。</li>
+                            <li>**供应链效率：** 实施了越库配送（Cross-Dock）策略，将国内配送提前期缩短了整整**2天**。</li>
+                            <li>**IT集成：** 牵头实时产品跟踪系统与承运商的集成，总效率提高了 20%。</li>
+                            <li>**运营卓越：** 优化仓库运营，订单履行速度提高了 25%。</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="lang-content" data-lang="tr">
+                    <div class="experience-item">
+                        <h4>2. İthalat-İhracat Müdürü (Colin's)</h4>
+                        <p>Eylül 2006 - Kasım 2010 (4 Yıl) | Türkiye</p>
+                        <p>Uçtan uca lojistik, ithalat/ihracat operasyonları, gümrükleme ve stratejik planlamayı yönetimi. Uluslararası nakliye rotaları ve uyum dokümantasyonunun optimizasyonuna odaklanma.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="en">
+                    <div class="experience-item">
+                        <h4>2. Import-Export Manager (Colin's)</h4>
+                        <p>September 2006 - November 2010 (4 Years) | Turkey</p>
+                        <p>Managed end-to-end logistics, import/export operations, customs clearance, and strategic planning. Focused on optimizing international shipping routes and compliance documentation.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                    <div class="experience-item">
+                        <h4>2. Менеджер по импорту-экспорту (Colin's)</h4>
+                        <p>Сентябрь 2006 - Ноябрь 2010 (4 года) | Турция</p>
+                        <p>Управлял сквозными логистическими, импортно-экспортными операциями, таможенным оформлением и стратегическим планированием. Сосредоточен на оптимизации международных маршрутов доставки и документации соответствия.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="experience-item">
+                        <h4>2. 进出口经理 (Colin's)</h4>
+                        <p>2006年9月 - 2010年11月 (4年) | 土耳其</p>
+                        <p>管理端到端物流、进出口运营、海关清关和战略规划。专注于优化国际运输路线和合规文件。</p>
+                    </div>
+                </div>
+                
+                <h3 class="sub-experience-title" data-title-tr="Daha Önceki Profesyonel Deneyimler (1994-2005)" data-title-en="Earlier Professional Experience (1994-2005)" data-title-ru="Предыдущий профессиональный опыт (1994-2005)" data-title-zh="早期专业经验 (1994-2005)">Daha Önceki Profesyonel Deneyimler (1994-2005)</h3>
+
+                <div class="lang-content" data-lang="tr">
+                    <div class="experience-item">
+                        <h4>3. Adalı Tekstil Sanayi ve Ticaret Ltd. Şti.</h4>
+                        <p>Şubat 2002 - Eylül 2005 (3.5 Yıl) | Tekstil Sektörü</p>
+                        <p>Toptan ve perakende satış stratejilerinin geliştirilmesi ve uygulanması; ağ oluşturma ve idari yönetim odaklı çalışmalar.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="en">
+                    <div class="experience-item">
+                        <h4>3. Adali Tekstil Sanayi ve Ticaret Ltd. Sti.</h4>
+                        <p>February 2002 - September 2005 (3.5 Years) | Textile Industry</p>
+                        <p>Developed and executed wholesale and retail sales strategies, focusing on networking and administrative management.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                    <div class="experience-item">
+                        <h4>3. Adali Tekstil Sanayi ve Ticaret Ltd. Sti.</h4>
+                        <p>Февраль 2002 - Сентябрь 2005 (3.5 года) | Текстильная промышленность</p>
+                        <p>Разработка и реализация стратегий оптовых и розничных продаж, с акцентом на развитие сети и административное управление.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="experience-item">
+                        <h4>3. Adali Tekstil Sanayi ve Ticaret Ltd. Sti.</h4>
+                        <p>2002年2月 - 2005年9月 (3.5年) | 纺织业</p>
+                        <p>制定并执行批发和零售销售策略，专注于建立网络和行政管理。</p>
+                    </div>
+                </div>
+                
+                <div class="lang-content" data-lang="tr">
+                    <div class="experience-item">
+                        <h4>4. Satınalma ve Lojistik Uzmanı | Koray Yapı Endüstrisi</h4>
+                        <p>Ocak 1996 - Haziran 2001 (İnşaat Sektörü)</p>
+                        <p>Yurtdışına mal tedariği, gümrük işlemleri ve yerel satınalma yönetimi.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="en">
+                    <div class="experience-item">
+                        <h4>4. Purchasing and Logistics Specialist | Koray Yapi Endustrisi</h4>
+                        <p>Jan 1996 - Jun 2001 (Construction Industry)</p>
+                        <p>Managed supply of goods abroad, customs, and local procurement.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                    <div class="experience-item">
+                        <h4>4. Специалист по закупкам и логистике | Koray Yapi Endustrisi</h4>
+                        <p>Январь 1996 - Июнь 2001 (Строительная отрасль)</p>
+                        <p>Управление поставкой товаров за границу, таможней и местными закупками.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="experience-item">
+                        <h4>4. 采购和物流专家 | Koray Yapi Endustrisi</h4>
+                        <p>1996年1月 - 2001年6月 (建筑业)</p>
+                        <p>管理国外货物供应、海关和本地采购。</p>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="tr">
+                    <div class="experience-item">
+                        <h4>5. İthalat ve Satınalma | Soyak International Construction</h4>
+                        <p>Ocak 1995 - Ocak 1996</p>
+                        <p>İthalat, yerel ve bölgesel satınalma yönetimi. Önemli yerel hükümet ilişkilerinin yönetimi.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="en">
+                    <div class="experience-item">
+                        <h4>5. Import and Procurement | Soyak International Construction</h4>
+                        <p>Jan 1995 - Jan 1996</p>
+                        <p>Import, local, and regional procurement. Managed key local government relations.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                    <div class="experience-item">
+                        <h4>5. Импорт и Закупки | Soyak International Construction</h4>
+                        <p>Январь 1995 - Январь 1996</p>
+                        <p>Импортные, местные и региональные закупки. Управление ключевыми отношениями с местными органами власти.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="experience-item">
+                        <h4>5. 进口和采购 | Soyak International Construction</h4>
+                        <p>1995年1月 - 1996年1月</p>
+                        <p>进口、本地和区域采购。管理关键的地方政府关系。</p>
+                    </div>
+                </div>
+
+                <div class="lang-content" data-lang="tr">
+                    <div class="experience-item">
+                        <h4>6. Halkla İlişkiler Müdürü (Gümrük ve Satınalma) | Tekfen İnşaat</h4>
+                        <p>Ocak 1994 - Haziran 1995</p>
+                        <p>Lojistik ve yerel satınalma yönetimi.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="en">
+                    <div class="experience-item">
+                        <h4>6. Public Relations Manager (Customs and Purchasing) | Tekfen Construction</h4>
+                        <p>Jan 1994 - Jun 1995</p>
+                        <p>Managed logistics and local procurement.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                    <div class="experience-item">
+                        <h4>6. Менеджер по связям с общественностью (Таможня и Закупки) | Tekfen Construction</h4>
+                        <p>Январь 1994 - Июнь 1995</p>
+                        <p>Управление логистикой и местными закупками.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="experience-item">
+                        <h4>6. 公关经理 (海关与采购) | Tekfen Construction</h4>
+                        <p>1994年1月 - 1995年6月</p>
+                        <p>管理物流和本地采购。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title" data-title-tr="YETENEKLER VE DİLLER" data-title-en="KEY COMPETENCIES & LANGUAGES" data-title-ru="КЛЮЧЕВЫЕ КОМПЕТЕНЦИИ И ЯЗЫКИ" data-title-zh="核心能力与语言">YETENEKLER VE DİLLER</h2>
+
+                <div class="lang-content" data-lang="tr">
+                    <h4>Temel Yetkinlikler</h4>
+                    <ul>
+                        <li>Tedarik Zinciri Yönetimi (SCM)</li>
+                        <li>Depo Operasyonları (WMS) ve Filo Yönetimi</li>
+                        <li>Dış Ticaret Faaliyetleri (DTF), Bütçeleme ve İhale Organizasyonu</li>
+                        <li>Gümrükleme ve Hukuk, Yeşil Koridor Uygulamaları</li>
+                        <li>**QR/EAC/Sertifikasyon ve Uyum**</li>
+                        <li>Rusya, BDT ve Türkiye Operasyonel Odak</li>
+                        <li>Perakende, Tekstil ve İnşaat Sektörü Uzmanlığı</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">IT Becerileri ve Yazılımlar</h4>
+                    <ul>
+                        <li>Microsoft Office Suite, Microsoft Dynamics Axapta</li>
+                        <li>WMS (Depo Yönetim Sistemleri), Yapay Zeka Uygulamaları</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">Diller</h4>
+                    <ul>
+                        <li>Türkçe (Anadil)</li>
+                        <li>İngilizce (C1 İleri/Akıcı)</li>
+                        <li>Rusça (Profesyonel Çalışma Yetkinliği)</li>
+                        <li>Çince (Temel / İş - Öğrenme Aşamasında)</li>
+                    </ul>
+                </div>
+                <div class="lang-content" data-lang="en">
+                    <h4>Key Competencies</h4>
+                    <ul>
+                        <li>Supply Chain Management (SCM)</li>
+                        <li>Warehouse Operations (WMS) and Fleet Management</li>
+                        <li>Foreign Economic Activity (FEA), Budgeting & Tender Organization</li>
+                        <li>Customs Clearance & Law, Green Corridor Implementation</li>
+                        <li>**QR/EAC/Certification and Compliance**</li>
+                        <li>Russia, CIS, and Turkey Operational Focus</li>
+                        <li>Expertise in Retail, Textile, and Construction Sectors</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">IT Skills & Software</h4>
+                    <ul>
+                        <li>Microsoft Office Suite, Microsoft Dynamics Axapta</li>
+                        <li>WMS (Warehouse Management Systems), AI Applications</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">Languages</h4>
+                    <ul>
+                        <li>Turkish (Mother Tongue)</li>
+                        <li>English (C1 Advanced/Fluent)</li>
+                        <li>Russian (Professional Working Proficiency)</li>
+                        <li>Chinese (Basic / Business - Currently learning)</li>
+                    </ul>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                    <h4>Ключевые Компетенции</h4>
+                    <ul>
+                        <li>Управление Цепью Поставок (SCM)</li>
+                        <li>Складские Операции (WMS) и Управление Автопарком</li>
+                        <li>Внешнеэкономическая Деятельность (ВЭД), Бюджетирование и Организация Тендеров</li>
+                        <li>Таможенное Оформление и Право, Внедрение «Зеленого коридора»</li>
+                        <li>**QR/ЕАС/Сертификация и Соответствие**</li>
+                        <li>Операционный Фокус на России, СНГ и Турции</li>
+                        <li>Опыт работы в сферах розничной торговли, текстиля и строительства</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">ИТ-Навыки и Программное Обеспечение</h4>
+                    <ul>
+                        <li>Microsoft Office Suite, Microsoft Dynamics Axapta</li>
+                        <li>WMS (Системы Управления Складом), Приложения ИИ</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">Языки</h4>
+                    <ul>
+                        <li>Турецкий (Родной)</li>
+                        <li>Английский (C1 Продвинутый/Свободный)</li>
+                        <li>Русский (Профессиональный Рабочий Уровень)</li>
+                        <li>Китайский (Базовый / Деловой - Изучается)</li>
+                    </ul>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <h4>核心能力</h4>
+                    <ul>
+                        <li>供应链管理 (SCM)</li>
+                        <li>仓库运营 (WMS) 和车队管理</li>
+                        <li>对外经济活动 (FEA), 预算编制和招标组织</li>
+                        <li>海关清关与法律, 绿色通道实施</li>
+                        <li>**QR/EAC/认证与合规**</li>
+                        <li>俄罗斯、独联体和土耳其运营重点</li>
+                        <li>零售、纺织和建筑行业专业知识</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">IT 技能与软件</h4>
+                    <ul>
+                        <li>Microsoft Office Suite, Microsoft Dynamics Axapta</li>
+                        <li>WMS (仓库管理系统), AI 应用</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">语言</h4>
+                    <ul>
+                        <li>土耳其语 (母语)</li>
+                        <li>英语 (C1 高级/流利)</li>
+                        <li>俄语 (专业工作能力)</li>
+                        <li>中文 (基础 / 商务 - 学习中)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="perspective" class="section" style="background-color: var(--color-light);">
+            <div class="container">
+                <h2 class="section-title" data-title-tr="LOJİSTİK PERSPEKTİFİ VE ANALİZ" data-title-en="LOGISTICS PERSPECTIVE & ANALYSIS" data-title-ru="ЛОГИСТИЧЕСКАЯ ПЕРСПЕКТИВА И АНАЛИЗ" data-title-zh="物流视角与分析">LOJİSTİK PERSPEKTİFİ VE ANALİZ</h2>
+
+                <div class="insight-box">
+                    <div class="lang-content" data-lang="tr">
+                        <h3>Rusya-Türkiye Gümrük Optimizasyonu: Yeşil Koridor Etkisi</h3>
+                        <p>Rusya Federasyonu ve Türkiye arasındaki artan ticaret hacmi, hız ve uyumluluğu temel gereksinim haline getirmiştir. Yeşil Koridor statüsüne geçiş ile gümrükleme süresinin **2.87 günden 1.30 güne düşürülmesi**, doğrudan rekabet avantajı sağlamaktadır. Bu durum, operasyonel riskin minimize edilmesinde kritik öneme sahiptir.</p>
+                    </div>
+                    <div class="lang-content" data-lang="en">
+                        <h3>Russia-Turkey Customs Optimization: The Green Corridor Effect</h3>
+                        <p>The growing trade volume between the Russian Federation and Turkey has made speed and compliance essential requirements. Achieving Green Corridor status, which reduced customs processing time from **2.87 days to 1.30 days**, provides a direct competitive advantage. This is critical for minimizing operational risk.</p>
+                    </div>
+                    <div class="lang-content" data-lang="ru">
+                        <h3>Оптимизация Таможни Россия-Турция: Эффект «Зеленого коридора»</h3>
+                        <p>Растущий объем торговли между Российской Федерацией и Турцией сделал скорость и соответствие ключевыми требованиями. Получение статуса «Зеленый коридор», сократившее время таможенной обработки с **2,87 до 1,30 дня**, дает прямое конкурентное преимущество. Это критически важно для минимизации операционных рисков.</p>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <h3>俄罗斯-土耳其海关优化：“绿色通道”效应</h3>
+                        <p>俄罗斯联邦与土耳其之间不断增长的贸易量使得速度和合规性成为基本要求。“绿色通道”地位 nin获得将海关处理时间从**2.87天减少到1.30天**，提供了直接的竞争优势。这对于最小化运营风险至关重要。</p>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <div class="lang-content" data-lang="tr">
+                        <h3>Zorunlu EAC Sertifikasyonu ve Dijital Takip (QR Kod)</h3>
+                        <p>Rusya pazarında perakende lojistiği yönetimi, zorunlu EAC sertifikasyonu ve dijital ürün takip (QR kod/barkod) sistemlerinin entegrasyonunu gerektirir. Tedarik zinciri liderinin görevi, bu uyum zorluklarını aşmak, kayıp kargo ve gecikmeleri minimuma indiren IT sistem entegrasyonlarına öncülük etmektir.</p>
+                    </div>
+                    <div class="lang-content" data-lang="en">
+                        <h3>Mandatory EAC Certification and Digital Tracking (QR Code)</h3>
+                        <p>Managing retail logistics in the Russian market requires the integration of mandatory EAC certification and digital product tracking (QR code/barcode) systems. The role of the supply chain leader is to overcome these compliance challenges and spearhead IT system integrations that minimize lost cargo and delays.</p>
+                    </div>
+                    <div class="lang-content" data-lang="ru">
+                        <h3>Обязательная Сертификация EAC и Цифровое Отслеживание (QR-код)</h3>
+                        <p>Управление розничной логистикой на российском рынке требует интеграции обязательной сертификации EAC и систем цифрового отслеживания товаров (QR-код/штрих-код). Роль лидера цепи поставок заключается в преодолении этих проблем соответствия и руководстве интеграцией ИТ-систем, которые минимизируют потерю груза и задержки.</p>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <h3>强制性EAC认证和数字化跟踪（二维码）</h3>
+                        <p>管理俄罗斯市场的零售物流需要整合强制性EAC认证和数字产品跟踪（二维码/条形码）系统。供应链领导者的作用是克服这些合规挑战，并领导IT系统集成，以最大限度地减少货物丢失和延误。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title" data-title-tr="EĞİTİM" data-title-en="EDUCATIONAL BACKGROUND" data-title-ru="ОБРАЗОВАНИЕ" data-title-zh="教育背景">EĞİTİM</h2>
+
+                <div class="lang-content" data-lang="tr">
+                    <div class="education-item">
+                        <h4>İşletme Yönetimi - Yükseköğretim</h4>
+                        <p>Fakülte, Moskova, Rusya (Açık Öğretim)</p>
+                        <p class="date">Eylül 1994 - Mayıs 1997</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>Lise Diploması (Matematik)</h4>
+                        <p>Üsküdar Burhan Felek Lisesi, İstanbul</p>
+                        <p class="date">Mayıs 1988</p>
+                    </div>
+                    <h4 style="margin-top: 30px; color: var(--color-accent);">Önemli Sertifikalar ve Kurslar</h4>
+                    <ul>
+                        <li>**İş Protokolü Sertifikası** (Moscow Business School, Ekim 2010)</li>
+                        <li>**Çince Dil Kursu** (International Language School ILS, 2022-Şimdi)</li>
+                        <li>**İngilizce Kursu** (Virginia Commonwealth University USA, 1991)</li>
+                    </ul>
+                </div>
+                <div class="lang-content" data-lang="en">
+                    <div class="education-item">
+                        <h4>Business Administration - Higher Education</h4>
+                        <p>Faculty of Open Education, Moscow, Russia</p>
+                        <p class="date">September 1994 - May 1997</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>High School Diploma (Mathematics)</h4>
+                        <p>Uskudar Burhan Felek Lyceum, Istanbul</p>
+                        <p class="date">May 1988</p>
+                    </div>
+                    <h4 style="margin-top: 30px; color: var(--color-accent);">Certificates and Courses</h4>
+                    <ul>
+                        <li>**Business Protocol Certificate** (Moscow Business School, Oct 2010)</li>
+                        <li>**Chinese Language Course** (International Language School ILS, 2022-Present)</li>
+                        <li>**English Language Course** (Virginia Commonwealth University USA, 1991)</li>
+                    </ul>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                    <div class="education-item">
+                        <h4>Бизнес-администрирование - Высшее образование</h4>
+                        <p>Факультет Открытого Образования, Москва, Россия</p>
+                        <p class="date">Сентябрь 1994 - Май 1997</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>Диплом Средней Школы (Математика)</h4>
+                        <p>Лицей Ускюдар Бурхан Фелек, Стамбул</p>
+                        <p class="date">Май 1988</p>
+                    </div>
+                    <h4 style="margin-top: 30px; color: var(--color-accent);">Сертификаты и Курсы</h4>
+                    <ul>
+                        <li>**Сертификат Бизнес-протокола** (Московская Бизнес-Школа, Октябрь 2010)</li>
+                        <li>**Курсы Китайского Языка** (Международная Языковая Школа ILS, 2022-Наст. время)</li>
+                        <li>**Курс Английского Языка** (Virginia Commonwealth University USA, 1991)</li>
+                    </ul>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="education-item">
+                        <h4>工商管理 - 高等教育</h4>
+                        <p>开放教育学院, 莫斯科, 俄罗斯</p>
+                        <p class="date">1994年9月 - 1997年5月</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>高中毕业文凭 (数学)</h4>
+                        <p>Üsküdar Burhan Felek 文理中学, 伊斯坦布尔</p>
+                        <p class="date">1988年5月</p>
+                    </div>
+                    <h4 style="margin-top: 30px; color: var(--color-accent);">证书和课程</h4>
+                    <ul>
+                        <li>**商务礼仪证书** (莫斯科商学院, 2010年10月)</li>
+                        <li>**中文课程** (ILS国际语言学校, 2022年-至今)</li>
+                        <li>**英语课程** (美国弗吉尼亚联邦大学, 1991年)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="references" class="section">
+            <div class="container">
+                <h2 class="section-title" data-title-tr="REFERANSLAR" data-title-en="RECOMMENDATIONS" data-title-ru="РЕКОМЕНДАЦИИ" data-title-zh="推荐人">REFERANSLAR</h2>
+
+                <div class="lang-content" data-lang="tr">
+                    <div class="insight-box">
+                        <h3>Önder Ön</h3>
+                        <p>İnsan Kaynakları Direktörü, Colin's</p>
+                        <p>E-mail: onder.on@colins.com.tr | Telefon: +90 (532) 336 71 08</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Özgür Akbıyık</h3>
+                        <p>Mali İşler Müdürü (CFO), Anex Tour</p>
+                        <p>E-mail: ozgur.akbiyik@anextour.com | Telefon: +7 (915) 060 61 31</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Barış Köseliören</h3>
+                        <p>JOYMIS / Fimka Ltd. Sahibi</p>
+                        <p>Telefon: +90 (532) 371 97 47</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Serdar Özkazanç</h3>
+                        <p>İnşaat ve Teknik İşler Başkanı, Colin's (Mimarlık Departmanı)</p>
+                        <p>E-mail: serdar.ozkazanc@colins.ru | Telefon: +7 (926) 065 32 89</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="en">
+                    <div class="insight-box">
+                        <h3>Onder On</h3>
+                        <p>HR Director, Colin's</p>
+                        <p>E-mail: onder.on@colins.com.tr | Phone: +90 (532) 336 71 08</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Ozgur Akbiyik</h3>
+                        <p>Chief Financial Officer (CFO), Anex Tour</p>
+                        <p>E-mail: ozgur.akbiyik@anextour.com | Phone: +7 (915) 060 61 31</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Barış Koselioren</h3>
+                        <p>Owner of JOYMIS / Fimka Ltd.</p>
+                        <p>Phone: +90 (532) 371 97 47</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Serdar Ozkazanc</h3>
+                        <p>Head of Construction and Technical Works, Colin's (Architectural Department)</p>
+                        <p>E-mail: serdar.ozkazanc@colins.ru | Phone: +7 (926) 065 32 89</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                    <div class="insight-box">
+                        <h3>Ондер Он</h3>
+                        <p>Директор по персоналу, Colin's</p>
+                        <p>E-mail: onder.on@colins.com.tr | Телефон: +90 (532) 336 71 08</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Озгюр Акбыйык</h3>
+                        <p>Финансовый директор (CFO), Anex Tour</p>
+                        <p>E-mail: ozgur.akbiyik@anextour.com | Телефон: +7 (915) 060 61 31</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Барыш Коселиорен</h3>
+                        <p>Владелец JOYMIS / Fimka Ltd.</p>
+                        <p>Телефон: +90 (532) 371 97 47</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Сердар Озказанч</h3>
+                        <p>Руководитель отдела строительства и технических работ, Colin's (Архитектурный отдел)</p>
+                        <p>E-mail: serdar.ozkazanc@colins.ru | Телефон: +7 (926) 065 32 89</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="insight-box">
+                        <h3>Onder On (昂德尔·昂)</h3>
+                        <p>人力资源总监, Colin's</p>
+                        <p>E-mail: onder.on@colins.com.tr | 电话: +90 (532) 336 71 08</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Ozgur Akbiyik (奥兹居尔·阿克比伊克)</h3>
+                        <p>首席财务官 (CFO), Anex Tour</p>
+                        <p>E-mail: ozgur.akbiyik@anextour.com | 电话: +7 (915) 060 61 31</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Barış Koselioren (巴勒什·科塞利奥伦)</h3>
+                        <p>JOYMIS / Fimka Ltd. 所有人</p>
+                        <p>电话: +90 (532) 371 97 47</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Serdar Ozkazanc (塞尔达尔·奥兹卡赞奇)</h3>
+                        <p>建筑和技术工程负责人, Colin's (建筑部)</p>
+                        <p>E-mail: serdar.ozkazanc@colins.ru | 电话: +7 (926) 065 32 89</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>SALDIRAY YILDIRAY ÇAKMAK Modern CV Portfolyo | <span id="footer-text-contact">İletişim bilgileri yukarıdaki profil bölümünde mevcuttur.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langSwitcher = document.getElementById('lang-switcher');
+            const langContents = document.querySelectorAll('.lang-content');
+            const navLinks = document.querySelectorAll('nav a');
+            const sectionTitles = document.querySelectorAll('.section-title');
+            const footerText = document.getElementById('footer-text-contact');
+            const logo = document.querySelector('.logo');
+            let currentLang = 'tr';
+
+            function updateContent(lang) {
+                currentLang = lang;
+                // 1. CV İçeriği Güncelleme
+                langContents.forEach(content => {
+                    content.style.display = content.getAttribute('data-lang') === lang ? 'block' : 'none';
+                });
+
+                // 2. Navigasyon Güncelleme
+                navLinks.forEach(link => {
+                    const newText = link.getAttribute(`data-nav-${lang}`);
+                    if (newText) {
+                        link.textContent = newText;
+                    }
+                });
+
+                // 3. Bölüm Başlıkları Güncelleme
+                sectionTitles.forEach(title => {
+                    const newTitle = title.getAttribute(`data-title-${lang}`);
+                    if (newTitle) {
+                        title.textContent = newTitle;
+                    }
+                });
+
+                // 4. Footer Metni Güncelleme
+                const footerTranslations = {
+                    tr: 'İletişim bilgileri yukarıdaki profil bölümünde mevcuttur.',
+                    en: 'Contact information is available in the profile section above.',
+                    ru: 'Контактная информация доступна в разделе профиля выше.',
+                    zh: '联系信息可在上方的简介部分查看。'
+                };
+                footerText.textContent = footerTranslations[lang];
+
+                 // 5. Logo Güncelleme
+                logo.textContent = `LOGISTICS DIRECTOR CV | ${lang.toUpperCase()}`;
+            }
+
+            // Başlangıç dilini ayarla
+            updateContent(langSwitcher.value);
+
+            // Dil Değiştirme Olay Dinleyicisi (İnteraktif Etki)
+            langSwitcher.addEventListener('change', function() {
+                updateContent(this.value);
+            });
+
+            // Smooth Scrolling (İnteraktif Etki)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
